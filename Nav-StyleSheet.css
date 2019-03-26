@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    Padding: 0;
+    /* Makes The Width of the body (page) 100% so it will scale to the right size of any window*/
+    width: 100%;
+    /* Online font family information */
+    font-family: 'Oswald', sans-serif;
+    /* Set the font size of the page to 16px (thats the default size on most browsers) */
+    font-size: 16px;
+}
+
+.wrapper{
+    width: 80%;
+    /* Put the wrapper element in the center of the page */
+    margin: auto;
+    /* Max width of the wrapper can-not exceed 1200px (which is 100%) */
+    max-width: 1200px;
+}
+
+/* End Common Section */
+
+header{
+    /* keep the header tag from flowing into the rest of the page */
+    overflow: hidden;
+}
+
+header h1{
+    /* Have The h1 in header float to the left*/
+    float: left;
+    /* change the color of the page to grey*/
+    color: #555;
+    font-size: 160%;
+}
+
+nav{
+    /* float the nav menu(guide) to the right of the header bc its in the header */
+    float: right;
+}
+/* style the list inside the unorderlist inside the nav tag */
+nav ul li{
+    /* remove the list dots to make it look natural*/
+    list-style: none;
+    /* float to the left of the ul list inside the nav tag */
+    float: left;
+    /* give space to the left of the margin of the list so the words arent touching*/
+    margin-left: 20px;
+}
+/* style the a tag inside to list inside the unorderlist inside the nav tag*/
+nav ul li a{
+    /* make the text have no underline so it doesnt look like a link to a different webpage */
+    text-decoration: none;
+    font-size: 130%;
+    /* the higher the text weight then the more bold the text will become */
+    font-weight: 600;
+    color: #555;
+}
+nav ul li a:hover{
+    /*When hovering over the nav menu it will make the color grey a lighter color */
+    color: #aaa;
+}
+
+/* End Navigation */
+
+section:after{
+    content: " ";
+    display:block;
+    clear: both;
+}
+
+/* style the img tags inside the div class name container inside the section tag */
+section div.container img{
+    /*Lower the image size to something more resonable (smaller too fix pag) */
+    width: 33.3333%;
+    /* float this img to the left of the container and start in order */
+    float: left;
+    /* sets the opacity */
+    opacity: 1;
+    /* give the images a border */
+    box-sizing: border-box;
+    /* must have the border below to describe the border */
+    border: 2px solid transparent;
+    /*transition to set up how to opacity will change over time */
+    transition: opacity 1s;
+}
+
+/* style the img inside to div container in the section to have a hover affect */
+section div.container img:hover{
+    /* change the opacity when it is hovered to half of the whole value */
+    opacity: .5;
+}
+
+section{
+    /* set space at the bottom of the section margin(end of the images)
+    and gives it 3% of margin space only from the bottom */
+    margin-bottom: 3%;
+}
+
+/* style the h2's inside the section tags and aligns them to the center of the section */
+section h2{
+    text-align: center;
+}
+
+footer{
+    /* keeps the footer text from overflowing into the bottom of the page */
+    overflow: hidden;
+    text-align: center;
+    Padding-bottom: 10px;
+}
+
+footer p{
+    /* makes the font in the footer of the page more bold because the vaule is high */
+    font-weight: 600;
+}
+
+/* End Footer */
+
+/* Responsive */
+
+/*For phone users or smaller windows */
+@media only screen and (max-width: 768px){
+    .wrapper{
+        /* the with on a smaller screen or phone is 100% */
+        width: 100%;
+    }
+    header h1{
+        /*h1 header on a phone will have a 3% margin on the left*/
+        margin-left: 3%;
+    }
+    #menu-icon{
+        width: 30px;
+        height: 30px;
+        background: url(img/menuimg.png) no-repeat center;
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        z-index:100;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 0%;
+        padding: 3% 7%;
+        background: #eee;
+        width: 200px;
+        text-align: center;
+        z-index: 10;
+    }
+    nav ul li{
+        width: 90%;
+        padding: 5%;
+        margin: auto;
+    }
+    nav ul li a{
+        padding: 5% 20%;
+    }
+    nav ul li a:hover{
+        border-bottom: 1px solid #aaa;
+    }
+    nav:hover ul{
+        display: block;
+    }
+    section div.container img{
+        display:block;
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .wrapper {
+        width: 100%;
+    }
+    header h1{
+        margin-left: 3%;
+    }
+    nav{
+        margin-right: 3%;
+    }
+}
